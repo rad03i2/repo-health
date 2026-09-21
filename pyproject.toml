@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "repo-health"
+version = "1.0.0"
+description = "Local repository health auditor for codebase hygiene, documentation, security signals, and CI readiness."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Radwan Abdulhadi Ahmed"}]
+keywords = ["repository", "audit", "git", "quality", "cli"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent"]
+
+[project.scripts]
+repo-health = "repo_health.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/repo_health"]
